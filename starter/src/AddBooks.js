@@ -66,8 +66,8 @@ const AddBooks = ({ books, onShelfChange }) => {
                                         }}
                                         ></div>
                                         <div className="book-shelf-changer">
-                                        <select defaultValue={book.shelf} onChange={(event) => handleShelfChange(book, event.target.value)}>
-                                            <option value="none" disabled>
+                                        <select defaultValue={books.find((b) => b.id === book.id)?.shelf || "none" } onChange={(event) => handleShelfChange(book, event.target.value)}>
+                                            <option>
                                             Move to...
                                             </option>
                                             <option value="currentlyReading">
